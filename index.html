@@ -5,60 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="A. Susilawati - SMAN 10 Pinrang">
   <title>Let's Learn Parts of the Body! - A. Susilawati (SMAN 10 Pinrang)</title>
-  <!-- Google Fonts with graceful offline fallbacks -->
+  <!-- Google Fonts with crisp, high-legibility offline fallbacks -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 
   <style>
     /* =========================================================================
-       1. DESIGN TOKENS & PREMIUM THEME SYSTEM
+       1. DESIGN TOKENS & HIGH-CONTRAST PREMIUM THEME SYSTEM
        ========================================================================= */
     :root {
       --bg-top: #D9F2FF;
-      --bg-mid: #F3FBFF;
-      --bg-bottom: #FFF7DF;
-      --primary: #FF5E6C;
-      --primary-light: #FF8590;
-      --primary-dark: #D63948;
-      --secondary: #3B8BFF;
-      --secondary-light: #6EA9FF;
-      --secondary-dark: #1F66D1;
-      --yellow: #FFD43B;
-      --yellow-light: #FFE67D;
-      --yellow-dark: #D9A400;
-      --green: #2ED573;
-      --green-light: #5AE896;
-      --green-dark: #1EA657;
-      --purple: #9B5DE5;
-      --purple-light: #B886F4;
-      --purple-dark: #7134BD;
-      --orange: #FF9F43;
-      --orange-light: #FFB973;
-      --orange-dark: #D9791C;
-      --teal: #20C997;
-      --teal-dark: #129E74;
-      --text-dark: #22283A;
-      --text-muted: #56607A;
+      --bg-mid: #F5FBFF;
+      --bg-bottom: #FFF8E6;
+      --primary: #E0354B;
+      --primary-light: #F25065;
+      --primary-dark: #B01C30;
+      --secondary: #226CEB;
+      --secondary-light: #3E84F7;
+      --secondary-dark: #134BB3;
+      --yellow: #FFC928;
+      --yellow-light: #FFE066;
+      --yellow-dark: #C28A00;
+      --green: #18A354;
+      --green-light: #24BF67;
+      --green-dark: #0F783C;
+      --purple: #7A3BE0;
+      --purple-light: #9357F2;
+      --purple-dark: #5820B3;
+      --orange: #E37817;
+      --orange-light: #F5922F;
+      --orange-dark: #B55606;
+      --teal: #119E74;
+      --teal-dark: #0A7857;
+      --text-dark: #131826;
+      --text-muted: #333E59;
       --card-bg: #FFFFFF;
-      --border-soft: #DCE8FA;
-      --shadow-card: 0 14px 32px rgba(34, 40, 58, 0.10);
-      --shadow-lg: 0 22px 48px rgba(31, 102, 209, 0.16);
-      --font-display: 'Fredoka', 'Comic Sans MS', 'Chalkboard SE', system-ui, sans-serif;
-      --font-body: 'Nunito', 'Segoe UI', system-ui, -apple-system, sans-serif;
-      --shell-max: 1160px;
+      --border-soft: #B8D2F5;
+      --shadow-card: 0 12px 28px rgba(19, 24, 38, 0.12);
+      --shadow-lg: 0 18px 42px rgba(19, 75, 179, 0.16);
+      --font-display: 'Fredoka', 'Nunito', 'Segoe UI', Roboto, Arial, sans-serif;
+      --font-body: 'Nunito', 'Segoe UI', Roboto, system-ui, -apple-system, Arial, sans-serif;
+      --shell-max: 1180px;
     }
 
-    /* Classroom Projector Mode (High Contrast + Larger Typography) */
+    /* Classroom Projector Mode (Scales ALL rem typography cleanly + High Contrast) */
+    html.projector-mode {
+      font-size: 19px;
+    }
+
     body.projector-mode {
-      font-size: 118%;
-      --shell-max: 1340px;
-      --border-soft: #B4CEF7;
+      --shell-max: 1360px;
+      --border-soft: #8FB7F0;
       background: linear-gradient(180deg, #E8F6FF 0%, #FFFFFF 55%, #FFF8E6 100%);
     }
 
     body.projector-mode .bg-decor {
-      opacity: 0.32;
+      opacity: 0.2;
     }
 
     body.projector-mode .home-card,
@@ -66,7 +69,7 @@
     body.projector-mode .vocab-card,
     body.projector-mode .hub-card {
       border-width: 4px;
-      box-shadow: 0 12px 28px rgba(20, 35, 70, 0.16);
+      box-shadow: 0 12px 28px rgba(19, 24, 38, 0.18);
     }
 
     body.projector-mode .quiz-opt-btn,
@@ -83,13 +86,19 @@
     }
 
     html {
+      font-size: 16px;
       scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
     }
 
     body {
       width: 100%;
       min-height: 100vh;
       font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.5;
       color: var(--text-dark);
       background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-mid) 48%, var(--bg-bottom) 100%);
       overflow-x: hidden;
@@ -208,16 +217,214 @@
       align-items: center;
       justify-content: space-between;
       gap: 10px;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border: 3px solid #FFFFFF;
+      background: #FFFFFF;
+      border: 3px solid #C5DCFA;
       border-radius: 24px;
-      padding: 10px 14px;
-      box-shadow: 0 10px 26px rgba(59, 139, 255, 0.14);
+      padding: 10px 16px;
+      box-shadow: 0 10px 26px rgba(19, 75, 179, 0.14);
       margin-bottom: 18px;
       position: sticky;
       top: 10px;
       z-index: 60;
+    }
+
+    .hud-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .hud-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #EFF5FF;
+      border: 2px solid #BDD6FA;
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-weight: 900;
+      font-size: 0.98rem;
+      color: var(--text-dark);
+      transition: transform 0.2s ease;
+    }
+
+    .hud-pill.score-pill {
+      background: #FFF6CC;
+      border-color: #E6B400;
+      color: #5C3D00;
+    }
+
+    .hud-pill.score-pill.bump {
+      animation: bouncePop 0.42s ease;
+    }
+
+    .hud-pill.streak-pill {
+      background: #FFE8D6;
+      border-color: #E37817;
+      color: #8A3800;
+      display: none;
+    }
+
+    .hud-pill.timer-pill {
+      background: #EFE6FF;
+      border-color: #B992FA;
+      color: #481A96;
+    }
+
+    .hud-progress-wrap {
+      flex: 1;
+      min-width: 155px;
+      max-width: 280px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .hud-progress-label {
+      font-size: 0.88rem;
+      font-weight: 900;
+      color: var(--text-dark);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 15px;
+      background: #E2EEFC;
+      border-radius: 999px;
+      overflow: hidden;
+      border: 2px solid #B8D2F5;
+      padding: 2px;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #119E74, #18A354, #E6B400);
+      border-radius: 999px;
+      transition: width 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    /* =========================================================================
+       4. HIGH-CONTRAST 3D KIDS BUTTONS (CRISP & EASY TO READ)
+       ========================================================================= */
+    .btn {
+      font-family: var(--font-display);
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 22px;
+      font-size: 1.08rem;
+      color: #FFFFFF;
+      text-shadow: 0 1.5px 2px rgba(0, 0, 0, 0.28);
+      transition: transform 0.14s ease, box-shadow 0.14s ease, filter 0.14s ease;
+      position: relative;
+      overflow: hidden;
+      line-height: 1.25;
+    }
+
+    /* Very subtle top bevel so button text stays 100% sharp */
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 22%;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 100%);
+      pointer-events: none;
+    }
+
+    .btn:hover:not(:disabled) {
+      filter: brightness(1.05);
+      transform: translateY(-2px);
+    }
+
+    .btn:active:not(:disabled) {
+      transform: translateY(3px);
+    }
+
+    .btn:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .btn-lg {
+      padding: 16px 28px;
+      font-size: 1.28rem;
+      border-radius: 24px;
+    }
+
+    .btn-sm {
+      padding: 8px 15px;
+      font-size: 0.94rem;
+      border-radius: 14px;
+    }
+
+    .btn-icon {
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      border-radius: 15px;
+      font-size: 1.22rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(180deg, var(--primary-light) 0%, var(--primary) 100%);
+      box-shadow: 0 6px 0 var(--primary-dark), 0 10px 20px rgba(224, 53, 75, 0.26);
+    }
+    .btn-primary:active:not(:disabled) { box-shadow: 0 2px 0 var(--primary-dark); }
+
+    .btn-secondary {
+      background: linear-gradient(180deg, var(--secondary-light) 0%, var(--secondary) 100%);
+      box-shadow: 0 6px 0 var(--secondary-dark), 0 10px 20px rgba(34, 108, 235, 0.24);
+    }
+    .btn-secondary:active:not(:disabled) { box-shadow: 0 2px 0 var(--secondary-dark); }
+
+    .btn-green {
+      background: linear-gradient(180deg, var(--green-light) 0%, var(--green) 100%);
+      box-shadow: 0 6px 0 var(--green-dark), 0 10px 20px rgba(24, 163, 84, 0.24);
+    }
+    .btn-green:active:not(:disabled) { box-shadow: 0 2px 0 var(--green-dark); }
+
+    .btn-yellow {
+      background: linear-gradient(180deg, var(--yellow-light) 0%, var(--yellow) 100%);
+      color: #2B1C00;
+      text-shadow: none;
+      box-shadow: 0 6px 0 var(--yellow-dark), 0 10px 20px rgba(194, 138, 0, 0.26);
+    }
+    .btn-yellow:active:not(:disabled) { box-shadow: 0 2px 0 var(--yellow-dark); }
+
+    .btn-purple {
+      background: linear-gradient(180deg, var(--purple-light) 0%, var(--purple) 100%);
+      box-shadow: 0 6px 0 var(--purple-dark), 0 10px 20px rgba(122, 59, 224, 0.24);
+    }
+    .btn-purple:active:not(:disabled) { box-shadow: 0 2px 0 var(--purple-dark); }
+
+    .btn-soft {
+      background: #FFFFFF;
+      color: var(--text-dark);
+      text-shadow: none;
+      border: 2.5px solid #AFC8EB;
+      box-shadow: 0 4px 0 #9AB8E3;
+    }
+    .btn-soft::before { display: none; }
+    .btn-soft:active:not(:disabled) { box-shadow: 0 1px 0 #9AB8E3; }
+
+    .btn-soft.active-toggle {
+      background: #E2FCEF;
+      border-color: #18A354;
+      color: #0B5C2E;
+      box-shadow: 0 4px 0 #128041;
     }
 
     .hud-group {
@@ -556,18 +763,18 @@
     }
 
     .home-subtitle {
-      font-size: 1.05rem;
+      font-size: 1.08rem;
       color: var(--text-muted);
-      font-weight: 700;
+      font-weight: 800;
       margin-bottom: 20px;
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
     .identity-box {
-      background: #F4F9FF;
-      border: 2.5px dashed #B4D3FF;
+      background: #F0F7FF;
+      border: 2.5px solid #A8CAFA;
       border-radius: 22px;
-      padding: 14px 16px;
+      padding: 15px 16px;
       margin-bottom: 20px;
     }
 
@@ -577,7 +784,7 @@
       justify-content: space-between;
       margin-bottom: 10px;
       font-weight: 900;
-      font-size: 0.88rem;
+      font-size: 0.94rem;
       color: var(--secondary-dark);
     }
 
@@ -589,20 +796,20 @@
 
     .input-group label {
       display: block;
-      font-size: 0.78rem;
-      font-weight: 800;
-      color: var(--text-muted);
-      margin-bottom: 4px;
+      font-size: 0.88rem;
+      font-weight: 900;
+      color: var(--text-dark);
+      margin-bottom: 5px;
     }
 
     .input-group input {
       width: 100%;
-      padding: 9px 12px;
+      padding: 10px 12px;
       border-radius: 13px;
-      border: 2px solid #CDE0FB;
+      border: 2.5px solid #A8CAFA;
       font-family: var(--font-body);
       font-weight: 800;
-      font-size: 0.94rem;
+      font-size: 1rem;
       color: var(--text-dark);
       background: #FFFFFF;
       outline: none;
@@ -690,8 +897,16 @@
 
     .section-banner h2 {
       font-family: var(--font-display);
-      font-size: clamp(1.45rem, 3vw, 2rem);
+      font-size: clamp(1.5rem, 3vw, 2.05rem);
       margin-bottom: 4px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+    }
+
+    .section-banner p {
+      font-size: 1.02rem;
+      opacity: 1;
+      font-weight: 800;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.16);
     }
 
     .section-banner p {
@@ -863,23 +1078,24 @@
 
     .vocab-en {
       font-family: var(--font-display);
-      font-size: 1.32rem;
+      font-size: 1.42rem;
+      font-weight: 700;
       color: var(--secondary-dark);
-      margin-bottom: 2px;
+      margin-bottom: 3px;
       letter-spacing: 0.5px;
     }
 
     .vocab-id {
-      font-size: 0.94rem;
+      font-size: 1rem;
       font-weight: 800;
-      color: var(--text-muted);
+      color: var(--text-dark);
       margin-bottom: 10px;
     }
 
     .vocab-speak-btn {
       width: 100%;
-      padding: 8px 10px;
-      font-size: 0.88rem;
+      padding: 9px 10px;
+      font-size: 0.94rem;
       border-radius: 14px;
     }
 
@@ -1278,17 +1494,18 @@
 
     .quiz-opt-btn {
       background: #FFFFFF;
-      border: 3px solid #CDE0FB;
+      border: 3px solid #A8CAFA;
       border-radius: 22px;
-      padding: 15px 18px;
+      padding: 16px 18px;
       font-family: var(--font-display);
-      font-size: 1.24rem;
+      font-size: 1.32rem;
+      font-weight: 700;
       color: var(--text-dark);
       cursor: pointer;
       display: flex;
       align-items: center;
       gap: 12px;
-      box-shadow: 0 6px 0 #C5D9F5;
+      box-shadow: 0 6px 0 #9BBCEB;
       transition: transform 0.14s ease, border-color 0.14s ease, background 0.14s ease;
     }
 
@@ -1506,9 +1723,9 @@
     }
 
     .letter-slot.blank {
-      background: #FFFDF0;
-      border: 3px dashed #FF9F43;
-      color: #FF9F43;
+      background: #FFF9E0;
+      border: 3.5px dashed #C75B00;
+      color: #B85000;
     }
 
     .letter-slot.active-blank {
@@ -1602,14 +1819,15 @@
     .cert-br { bottom: 14px; right: 14px; border-left: none; border-top: none; border-radius: 0 0 10px 0; }
 
     .result-ribbon {
-      background: linear-gradient(90deg, #FF5E6C, #FF9F43, #FFD43B);
+      background: linear-gradient(90deg, #D92E45, #E06B10, #C96A08);
       color: #FFFFFF;
       font-family: var(--font-display);
-      font-size: 1.25rem;
-      padding: 8px 26px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      padding: 9px 28px;
       border-radius: 999px;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-      box-shadow: 0 8px 18px rgba(255, 94, 108, 0.28);
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.28);
+      box-shadow: 0 8px 18px rgba(217, 46, 69, 0.28);
     }
 
     .result-hero-row {
@@ -2055,11 +2273,11 @@
     }
 
     .motion-dock-tip {
-      font-size: 0.76rem;
+      font-size: 0.84rem;
       font-weight: 800;
-      color: var(--text-muted);
+      color: var(--text-dark);
       text-align: center;
-      line-height: 1.32;
+      line-height: 1.35;
     }
 
     .motion-dock-controls {
@@ -2070,8 +2288,8 @@
 
     .motion-dock-controls .btn-sm {
       flex: 1;
-      padding: 6px 8px;
-      font-size: 0.76rem;
+      padding: 7px 8px;
+      font-size: 0.82rem;
       border-radius: 12px;
     }
 
@@ -2100,12 +2318,13 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 6px;
-      background: rgba(255, 255, 255, 0.9);
-      border: 2.5px solid #DCE8FA;
+      background: #FFFFFF;
+      border: 2.5px solid #B8D2F5;
       border-radius: 999px;
-      padding: 8px 20px;
-      box-shadow: 0 6px 16px rgba(59, 139, 255, 0.10);
+      padding: 9px 22px;
+      box-shadow: 0 6px 16px rgba(19, 75, 179, 0.12);
       color: var(--text-dark);
+      font-size: 0.96rem;
     }
 
     .creator-footer-pill strong {
@@ -2184,7 +2403,7 @@
     }
 
     .mp-setup-label {
-      font-size: 0.84rem;
+      font-size: 0.9rem;
       font-weight: 900;
       color: var(--secondary-dark);
       text-transform: uppercase;
@@ -2291,13 +2510,15 @@
 
     .turn-banner {
       border-radius: 20px;
-      padding: 12px 18px;
+      padding: 13px 18px;
       text-align: center;
       font-family: var(--font-display);
-      font-size: clamp(1.15rem, 2.5vw, 1.55rem);
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-weight: 700;
       color: #FFFFFF;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.30);
       margin-bottom: 14px;
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -2414,12 +2635,13 @@
     }
 
     .duel-key-hint {
-      font-size: 0.78rem;
+      font-size: 0.86rem;
       font-weight: 900;
-      background: rgba(255, 255, 255, 0.85);
-      padding: 3px 10px;
+      background: #FFFFFF;
+      border: 2px solid #B8D2F5;
+      padding: 4px 11px;
       border-radius: 999px;
-      color: var(--text-muted);
+      color: var(--text-dark);
     }
 
     .duel-options-col {
@@ -2433,17 +2655,18 @@
     .duel-opt-btn {
       width: 100%;
       background: #FFFFFF;
-      border: 3px solid #CDE0FB;
+      border: 3px solid #A8CAFA;
       border-radius: 20px;
-      padding: 14px 16px;
+      padding: 15px 16px;
       font-family: var(--font-display);
-      font-size: 1.22rem;
+      font-size: 1.3rem;
+      font-weight: 700;
       color: var(--text-dark);
       cursor: pointer;
       display: flex;
       align-items: center;
       gap: 12px;
-      box-shadow: 0 5px 0 rgba(34, 40, 58, 0.14);
+      box-shadow: 0 5px 0 rgba(19, 24, 38, 0.18);
       transition: transform 0.12s ease, border-color 0.12s ease, background 0.12s ease;
     }
 
@@ -3191,7 +3414,24 @@
             <div class="mp-mode-icon" style="background: linear-gradient(180deg, #B886F4, #9B5DE5);">⚡</div>
             <div>
               <h3>Mode 2: Adu Cepat 2 Pemain</h3>
-              <p>Layar dibagi dua! Rebut poin tercepat dengan klik/sentuh atau tombol Keyboard!</p>
+              <p>Layar dibagi dua! 2 pemain bisa adu cepat serentak pakai <strong>Ujung Jari di Kamera (🔵 kiri & 🔴 kanan)</strong>, sentuh layar, atau Keyboard!</p>
+            </div>
+          </div>
+
+          <div class="mp-setup-group">
+            <div class="mp-setup-label">1. Nama Pemain (Bisa Diedit)</div>
+            <div class="mp-team-inputs">
+              <div class="mp-team-input-wrap" style="border-color:#6EA9FF;">
+                <span>🔵</span>
+                <input type="text" id="input-duel-p1" value="Pemain 1" maxlength="20" aria-label="Nama Pemain 1">
+              </div>
+              <div class="mp-team-input-wrap" style="border-color:#FF8590;">
+                <span>🔴</span>
+                <input type="text" id="input-duel-p2" value="Pemain 2" maxlength="20" aria-label="Nama Pemain 2">
+              </div>
+            </div>
+            <div style="font-size:0.8rem; font-weight:800; color:var(--text-muted); text-align:center; margin-top:2px;">
+              👆 Kamera 2P: P1 berdiri di <strong>Kiri (🔵)</strong> • P2 berdiri di <strong>Kanan (🔴)</strong> | ⌨️ <strong>A/S/D</strong> vs <strong>J/K/L</strong>
             </div>
           </div>
 
@@ -3283,10 +3523,11 @@
         <div class="game-header-bar">
           <div class="game-title-wrap">
             <h2>⚡ Adu Cepat 2 Pemain (Split-Screen Duel)</h2>
-            <p>Siapa paling cepat menjawab benar, dialah yang mendapat +10 poin!</p>
+            <p>Siapa paling cepat menjawab benar, dialah yang mendapat +10 poin! (Mendukung 2 Jari Kamera Serentak!)</p>
           </div>
           <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
             <div class="question-counter" id="mpd-counter">Ronde 1 / 8</div>
+            <button class="btn btn-soft btn-sm" id="mpd-btn-cam">📷 Kamera 2P: OFF</button>
             <button class="btn btn-soft btn-sm" id="mpd-btn-exit">↩️ Lobby</button>
           </div>
         </div>
@@ -3296,7 +3537,7 @@
             <span class="duel-score-pill" style="background:var(--secondary);" id="mpd-p1-score">0</span>
             <div>
               <div id="mpd-p1-name-top">🔵 Pemain 1</div>
-              <div style="font-size:0.78rem; color:var(--text-muted); font-family:var(--font-body);">Tombol: A • S • D</div>
+              <div style="font-size:0.78rem; color:var(--text-muted); font-family:var(--font-body);">👆 Jari Kiri / ⌨️ A • S • D</div>
             </div>
           </div>
 
@@ -3307,7 +3548,7 @@
           <div class="duel-player-hdr p2-hdr">
             <div>
               <div id="mpd-p2-name-top">Pemain 2 🔴</div>
-              <div style="font-size:0.78rem; color:var(--text-muted); font-family:var(--font-body);">Tombol: J • K • L</div>
+              <div style="font-size:0.78rem; color:var(--text-muted); font-family:var(--font-body);">👆 Jari Kanan / ⌨️ J • K • L</div>
             </div>
             <span class="duel-score-pill" style="background:var(--primary);" id="mpd-p2-score">0</span>
           </div>
@@ -3372,8 +3613,8 @@
         <li>❓ <strong>Level 3 (Guess the Body Part):</strong> Jawab 10 soal pilihan ganda acak (tebak gambar, fungsi bagian tubuh, dan terjemahan).</li>
         <li>🎧 <strong>Level 4 (Listen & Choose):</strong> Dengarkan suara kata/kalimat Bahasa Inggris, lalu pilih gambar yang sesuai.</li>
         <li>✏️ <strong>Level 5 (Complete the Word):</strong> Lengkapi huruf yang hilang dengan mengklik tombol huruf!</li>
-        <li>👥 <strong>Mode Multiplayer Kelas:</strong> Bisa bermain <strong>Tanding Antarkelompok (2–4 Tim)</strong> secara bergantian di proyektor, atau <strong>Adu Cepat 2 Pemain (Split-Screen)</strong> memakai tombol sentuh maupun keyboard (<code>A/S/D</code> vs <code>J/K/L</code>)!</li>
-        <li>📷 <strong>Mode Gerak Tanpa Sentuh (Kamera):</strong> Aktifkan tombol 📷 agar siswa bisa bermain tanpa menyentuh layar! Gerakkan tangan di depan kamera, arahkan kursor tangan ke tombol/bagian tubuh lalu tahan sebentar hingga lingkaran penuh (atau cubit ibu jari & telunjuk pada mode AI).</li>
+        <li>👥 <strong>Mode Multiplayer Kelas:</strong> Bisa bermain <strong>Tanding Antarkelompok (2–4 Tim)</strong> secara bergantian di proyektor, atau <strong>Adu Cepat 2 Pemain (Split-Screen)</strong> memakai <strong>2 ujung jari serentak di kamera (🔵 P1 kiri & 🔴 P2 kanan)</strong>, layar sentuh, maupun keyboard (<code>A/S/D</code> vs <code>J/K/L</code>)!</li>
+        <li>📷 <strong>Mode Gerak Ujung Jari Tanpa Sentuh (Kamera):</strong> Aktifkan tombol 📷 agar siswa bisa menunjuk dengan <strong>ujung jari telunjuk (👆)</strong>! Tahan jari sebentar hingga lingkaran penuh <strong>ATAU cubit ibu jari & telunjuk (👌)</strong> untuk klik cepat! Otomatis mendukung 2 tangan sekaligus saat Duel 2 Pemain.</li>
         <li>📽️ <strong>Mode Proyektor:</strong> Tekan ikon 📽️ di kanan atas saat memakai proyektor kelas agar huruf & tombol lebih besar dan jelas!</li>
         <li>⭐ <strong>Sistem Skor Aman:</strong> Jawaban benar = <strong>+10 poin</strong>. Skormu tersimpan otomatis dan tidak ter-reset sebelum kamu menekan <em>PLAY AGAIN</em>.</li>
       </ul>
@@ -3434,20 +3675,31 @@
   </div>
 
   <!-- =========================================================================
-       TOUCHLESS MOTION CURSOR & MINI WEBCAM DOCK
+       TOUCHLESS MOTION CURSORS (P1 / SOLO & P2 DUEL) + MINI WEBCAM DOCK
        ========================================================================= -->
-  <div id="motion-cursor" aria-hidden="true">
+  <div id="motion-cursor" class="motion-cursor p1-cursor" aria-hidden="true">
     <svg class="cursor-ring" viewBox="0 0 80 80">
-      <circle cx="40" cy="40" r="33" fill="rgba(255,255,255,0.68)" stroke="#DCE8FA" stroke-width="7"/>
-      <circle id="motion-ring-progress" cx="40" cy="40" r="33" fill="none" stroke="#2ED573" stroke-width="7"
+      <circle cx="40" cy="40" r="33" fill="rgba(255,255,255,0.72)" stroke="#DCE8FA" stroke-width="7"/>
+      <circle id="motion-ring-progress" cx="40" cy="40" r="33" fill="none" stroke="#3B8BFF" stroke-width="7"
         stroke-linecap="round" stroke-dasharray="207.35" stroke-dashoffset="207.35"/>
     </svg>
-    <span class="cursor-emoji" id="motion-cursor-emoji">🖐️</span>
+    <span class="cursor-emoji" id="motion-cursor-emoji">👆</span>
+    <span class="cursor-player-tag" id="motion-tag-p1">🔵 P1</span>
+  </div>
+
+  <div id="motion-cursor-p2" class="motion-cursor p2-cursor" aria-hidden="true">
+    <svg class="cursor-ring" viewBox="0 0 80 80">
+      <circle cx="40" cy="40" r="33" fill="rgba(255,255,255,0.72)" stroke="#FFD5DA" stroke-width="7"/>
+      <circle id="motion-ring-progress-p2" cx="40" cy="40" r="33" fill="none" stroke="#FF5E6C" stroke-width="7"
+        stroke-linecap="round" stroke-dasharray="207.35" stroke-dashoffset="207.35"/>
+    </svg>
+    <span class="cursor-emoji" id="motion-cursor-emoji-p2">👆</span>
+    <span class="cursor-player-tag" id="motion-tag-p2">🔴 P2</span>
   </div>
 
   <aside id="motion-dock" aria-label="Kontrol Kamera Mode Gerak">
     <div class="motion-dock-head">
-      <span class="motion-badge" id="motion-engine-badge">🌊 Sensor Gerak</span>
+      <span class="motion-badge" id="motion-engine-badge">⏳ Memuat AI Jari...</span>
       <button class="btn btn-soft btn-sm" id="btn-motion-close" style="padding:3px 9px; font-size:0.74rem;">✕ Tutup</button>
     </div>
     <div class="motion-cam-box">
@@ -3455,11 +3707,11 @@
       <canvas id="motion-overlay-canvas" width="220" height="165"></canvas>
     </div>
     <div class="motion-dock-tip" id="motion-dock-tip">
-      Arahkan tangan ke tombol & tahan sebentar untuk menyentuh!
+      Tunjuk dengan ujung jari 👆 (tahan sebentar atau cubit 👌 untuk klik!)
     </div>
     <div class="motion-dock-controls">
-      <button class="btn btn-soft btn-sm" id="btn-motion-mode" title="Ganti mode pelacakan">🔄 Mode: Auto</button>
-      <button class="btn btn-soft btn-sm" id="btn-motion-speed" title="Kecepatan sentuh otomatis">⏳ 0.9s</button>
+      <button class="btn btn-soft btn-sm" id="btn-motion-mode" title="Ganti antara AI Ujung Jari & Sensor Offline">🔄 AI Jari</button>
+      <button class="btn btn-soft btn-sm" id="btn-motion-speed" title="Kecepatan tahan sentuh otomatis">⏳ 0.8s</button>
     </div>
   </aside>
 
@@ -4196,6 +4448,7 @@
 
       function toggleProjectorMode() {
         State.projectorMode = !State.projectorMode;
+        document.documentElement.classList.toggle('projector-mode', State.projectorMode);
         document.body.classList.toggle('projector-mode', State.projectorMode);
         syncToolbarUI();
         showToast(State.projectorMode
@@ -4238,6 +4491,7 @@
         const musHome = document.getElementById('btn-home-music');
         const motHud = document.getElementById('btn-hud-motion');
         const motHome = document.getElementById('btn-home-motion');
+        const motDuel = document.getElementById('mpd-btn-cam');
         const projHud = document.getElementById('btn-hud-projector');
         const projHome = document.getElementById('btn-home-projector');
 
@@ -4253,8 +4507,12 @@
 
         if (motHud && motHome) {
           motHud.classList.toggle('active-toggle', MotionController.active);
-          motHome.textContent = MotionController.active ? '📷 GERAK KAMERA: ON' : '📷 GERAK KAMERA: OFF';
+          motHome.textContent = MotionController.active ? '📷 GERAK JARI: ON' : '📷 GERAK KAMERA: OFF';
           motHome.classList.toggle('active-toggle', MotionController.active);
+        }
+        if (motDuel) {
+          motDuel.textContent = MotionController.active ? '📷 Kamera 2P: ON' : '📷 Kamera 2P: OFF';
+          motDuel.classList.toggle('active-toggle', MotionController.active);
         }
 
         projHud.classList.toggle('active-toggle', State.projectorMode);
@@ -5336,7 +5594,12 @@
       }
 
       /* -----------------------------------------------------------------------
-         15. TOUCHLESS MOTION CONTROL ENGINE (OFFLINE WEBCAM SENSOR + DWELL CLICK)
+         15. TOUCHLESS MOTION CONTROL ENGINE
+             - Primary: AI Fingertip Tracking via MediaPipe Hands (maxNumHands: 2)
+               Tracks exact Index Fingertip (landmark 8) + Pinch-to-Click (4 & 8)
+             - Fallback: Dual-Zone Offline Motion Sensor (works with no internet)
+             - Full 2-Player Simultaneous Camera Support in Mode 2 (Duel):
+               Left half = Player 1 (Blue 🔵👆), Right half = Player 2 (Red 🔴👆)
          ----------------------------------------------------------------------- */
       const MotionController = {
         active: false,
@@ -5345,23 +5608,242 @@
         procCanvas: null,
         procCtx: null,
         prevFrame: null,
-        cursorX: window.innerWidth / 2,
-        cursorY: window.innerHeight / 2,
-        targetX: window.innerWidth / 2,
-        targetY: window.innerHeight / 2,
-        dwellTarget: null,
-        dwellStart: 0,
-        dwellDurationMs: 900,
+
+        // AI MediaPipe Hands state
+        aiHands: null,
+        aiReady: false,
+        aiLoading: false,
+        aiFailed: false,
+        aiBusy: false,
+        useAI: true,
+        latestHandLandmarks: [],
+        lastAITimestamp: 0,
+
+        // Dwell timing controls
+        dwellDurationMs: 800,
         speedIdx: 1,
-        speeds: [600, 900, 1200],
-        cooldownUntil: 0,
-        modeLabel: 'Auto',
+        speeds: [500, 800, 1100],
+
+        // Independent cursor states for Player 1 (or Solo) and Player 2 (Duel)
+        cursors: {
+          p1: {
+            id: 'p1',
+            cursorElId: 'motion-cursor',
+            ringElId: 'motion-ring-progress',
+            emojiElId: 'motion-cursor-emoji',
+            hoverClass: 'motion-hover',
+            rippleClass: 'p1-ripple',
+            x: window.innerWidth * 0.28,
+            y: window.innerHeight * 0.5,
+            tx: window.innerWidth * 0.28,
+            ty: window.innerHeight * 0.5,
+            dwellTarget: null,
+            dwellStart: 0,
+            cooldownUntil: 0,
+            pinchDown: false,
+            pinching: false,
+            lastSeen: 0
+          },
+          p2: {
+            id: 'p2',
+            cursorElId: 'motion-cursor-p2',
+            ringElId: 'motion-ring-progress-p2',
+            emojiElId: 'motion-cursor-emoji-p2',
+            hoverClass: 'motion-hover-p2',
+            rippleClass: 'p2-ripple',
+            x: window.innerWidth * 0.72,
+            y: window.innerHeight * 0.5,
+            tx: window.innerWidth * 0.72,
+            ty: window.innerHeight * 0.5,
+            dwellTarget: null,
+            dwellStart: 0,
+            cooldownUntil: 0,
+            pinchDown: false,
+            pinching: false,
+            lastSeen: 0
+          }
+        },
+
+        isDualMode() {
+          if (State.currentScreen !== 'mp-duel') return false;
+          const openModal = document.querySelector('.modal-backdrop.open');
+          return !openModal;
+        },
 
         async toggle() {
           if (this.active) {
             this.stop();
           } else {
             await this.start();
+          }
+        },
+
+        loadScriptOnce(src) {
+          return new Promise((resolve, reject) => {
+            if (document.querySelector(`script[src="${src}"]`)) {
+              resolve();
+              return;
+            }
+            const s = document.createElement('script');
+            s.src = src;
+            s.crossOrigin = 'anonymous';
+            const timer = setTimeout(() => reject(new Error('Timeout loading AI script')), 12000);
+            s.onload = () => { clearTimeout(timer); resolve(); };
+            s.onerror = (e) => { clearTimeout(timer); reject(e); };
+            document.head.appendChild(s);
+          });
+        },
+
+        async ensureAIHands() {
+          if (this.aiReady || this.aiLoading || this.aiFailed) return;
+          this.aiLoading = true;
+          this.updateDockBadge();
+          try {
+            const base = 'https://cdn.jsdelivr.net/npm/@mediapipe/hands/';
+            await this.loadScriptOnce(base + 'hands.js');
+            if (typeof window.Hands !== 'function') {
+              throw new Error('MediaPipe Hands constructor unavailable');
+            }
+            const hands = new window.Hands({
+              locateFile: (file) => base + file
+            });
+            hands.setOptions({
+              maxNumHands: 2,
+              modelComplexity: 1,
+              minDetectionConfidence: 0.6,
+              minTrackingConfidence: 0.55
+            });
+            hands.onResults((results) => this.onAIResults(results));
+            this.aiHands = hands;
+            this.aiReady = true;
+            this.aiLoading = false;
+            this.updateDockBadge();
+            if (this.active) {
+              showToast('👆 AI Pelacak Ujung Jari AKTIF! Tunjuk pakai jari telunjuk atau cubit 👌!');
+            }
+          } catch (err) {
+            this.aiLoading = false;
+            this.aiFailed = true;
+            this.useAI = false;
+            this.updateDockBadge();
+            if (this.active) {
+              showToast('🌊 Mode Offline: Menggunakan Sensor Gerak Kamera (mendukung 2 pemain!).');
+            }
+          }
+        },
+
+        onAIResults(results) {
+          this.aiBusy = false;
+          this.lastAITimestamp = performance.now();
+          this.latestHandLandmarks = (results && results.multiHandLandmarks) ? results.multiHandLandmarks : [];
+          if (!this.active || !this.useAI) return;
+
+          const now = performance.now();
+          const dual = this.isDualMode();
+
+          // Convert each detected hand into fingertip target + scale-invariant pinch state
+          const mappedHands = this.latestHandLandmarks.map(lm => {
+            const idxTip = lm[8];   // Exact Index Fingertip
+            const thumbTip = lm[4]; // Thumb tip for pinch-to-click
+            const wrist = lm[0];
+            const midMcp = lm[9];
+
+            // Mirror X so moving finger right moves cursor right, with slight margin padding
+            const rawX = 1 - idxTip.x;
+            const rawY = idxTip.y;
+            const normX = Math.max(0.01, Math.min(0.99, (rawX - 0.06) / 0.88));
+            const normY = Math.max(0.01, Math.min(0.99, (rawY - 0.06) / 0.88));
+
+            const handSize = Math.max(0.06, Math.hypot(wrist.x - midMcp.x, wrist.y - midMcp.y));
+            const pinchDist = Math.hypot(thumbTip.x - idxTip.x, thumbTip.y - idxTip.y);
+            const pinchRatio = pinchDist / handSize;
+
+            return {
+              lm,
+              rawX,
+              rawY,
+              screenX: normX * window.innerWidth,
+              screenY: normY * window.innerHeight,
+              pinchRatio
+            };
+          });
+
+          if (!dual) {
+            // Single-Player / Team Battle / Menus: use first detected fingertip
+            if (mappedHands.length > 0) {
+              const h = mappedHands[0];
+              this.applyHandToCursor(this.cursors.p1, h, now);
+            }
+          } else {
+            // 2-Player Split-Screen Duel: Left half -> P1 (Blue), Right half -> P2 (Red)
+            let p1Hand = null;
+            let p2Hand = null;
+
+            if (mappedHands.length === 1) {
+              if (mappedHands[0].rawX < 0.5) p1Hand = mappedHands[0];
+              else p2Hand = mappedHands[0];
+            } else if (mappedHands.length >= 2) {
+              const sorted = [...mappedHands].sort((a, b) => a.rawX - b.rawX);
+              p1Hand = sorted[0];
+              p2Hand = sorted[sorted.length - 1];
+            }
+
+            if (p1Hand) this.applyHandToCursor(this.cursors.p1, p1Hand, now);
+            if (p2Hand) this.applyHandToCursor(this.cursors.p2, p2Hand, now);
+          }
+
+          this.drawOverlay(dual, mappedHands);
+        },
+
+        applyHandToCursor(cur, hand, now) {
+          cur.tx = hand.screenX;
+          cur.ty = hand.screenY;
+          cur.lastSeen = now;
+
+          // Pinch hysteresis: click when ratio < 0.34, release when ratio > 0.46
+          if (!cur.pinchDown && hand.pinchRatio < 0.34) {
+            cur.pinchDown = true;
+            cur.pinching = true;
+            if (now > cur.cooldownUntil) {
+              const hit = this.findInteractiveAt(cur.x, cur.y, cur.id);
+              if (hit) {
+                this.triggerCursorClick(cur, hit, now);
+              }
+            }
+          } else if (cur.pinchDown && hand.pinchRatio > 0.46) {
+            cur.pinchDown = false;
+            cur.pinching = false;
+          }
+        },
+
+        updateDockBadge() {
+          const badge = document.getElementById('motion-engine-badge');
+          const modeBtn = document.getElementById('btn-motion-mode');
+          const tip = document.getElementById('motion-dock-tip');
+          if (!badge) return;
+
+          const dual = this.isDualMode();
+          if (this.useAI && this.aiReady) {
+            badge.textContent = dual ? '👆👆 AI Jari (2 Pemain)' : '👆 AI Ujung Jari';
+            badge.classList.add('ai-ready');
+            if (modeBtn) modeBtn.textContent = '🔄 AI Jari';
+            if (tip) {
+              tip.textContent = dual
+                ? 'P1 kiri (🔵) & P2 kanan (🔴): Tunjuk ujung jari & cubit 👌 atau tahan!'
+                : 'Arahkan ujung jari telunjuk 👆 ke tombol (tahan atau cubit 👌)!';
+            }
+          } else if (this.useAI && this.aiLoading) {
+            badge.textContent = '⏳ Memuat AI Jari...';
+            badge.classList.remove('ai-ready');
+          } else {
+            badge.textContent = dual ? '🌊 Sensor Gerak (2P)' : '🌊 Sensor Offline';
+            badge.classList.remove('ai-ready');
+            if (modeBtn) modeBtn.textContent = '🔄 Sensor';
+            if (tip) {
+              tip.textContent = dual
+                ? 'P1 gerak di kiri (🔵) • P2 gerak di kanan (🔴)!'
+                : 'Gerakkan tangan ke tombol & tahan sebentar untuk klik!';
+            }
           }
         },
 
@@ -5372,7 +5854,7 @@
           }
           try {
             this.stream = await navigator.mediaDevices.getUserMedia({
-              video: { width: 320, height: 240, facingMode: 'user' },
+              video: { width: 480, height: 360, facingMode: 'user' },
               audio: false
             });
             const video = document.getElementById('motion-video');
@@ -5387,12 +5869,18 @@
             }
             this.prevFrame = null;
             this.active = true;
+            this.aiBusy = false;
 
             document.getElementById('motion-dock').classList.add('open');
             document.getElementById('motion-cursor').classList.add('active');
-            document.getElementById('motion-engine-badge').textContent = '🌊 Sensor Gerak Aktif';
+            this.updateDockBadge();
             syncToolbarUI();
-            showToast('📷 Mode Gerak Kamera AKTIF! Gerakkan tangan di depan kamera.');
+            showToast('📷 Kamera AKTIF! Mengaktifkan pelacak ujung jari...');
+
+            // Load MediaPipe Hands in background while offline sensor already works immediately
+            if (this.useAI && !this.aiReady && !this.aiFailed) {
+              this.ensureAIHands();
+            }
             this.loop();
           } catch (err) {
             showToast('📷 Akses kamera ditolak atau tidak tersedia.');
@@ -5402,6 +5890,7 @@
 
         stop() {
           this.active = false;
+          this.aiBusy = false;
           if (this.rafId) {
             cancelAnimationFrame(this.rafId);
             this.rafId = null;
@@ -5410,18 +5899,31 @@
             this.stream.getTracks().forEach(t => t.stop());
             this.stream = null;
           }
-          this.clearHover();
+          this.clearHover(this.cursors.p1);
+          this.clearHover(this.cursors.p2);
           const dock = document.getElementById('motion-dock');
-          const cur = document.getElementById('motion-cursor');
+          const cur1 = document.getElementById('motion-cursor');
+          const cur2 = document.getElementById('motion-cursor-p2');
           if (dock) dock.classList.remove('open');
-          if (cur) cur.classList.remove('active');
+          if (cur1) cur1.classList.remove('active', 'show-tag');
+          if (cur2) cur2.classList.remove('active', 'show-tag');
           syncToolbarUI();
         },
 
         toggleTrackingMode() {
-          this.modeLabel = this.modeLabel === 'Auto' ? 'Sensitif' : 'Auto';
-          document.getElementById('btn-motion-mode').textContent = `🔄 Mode: ${this.modeLabel}`;
-          showToast(`📷 Mode pelacakan: ${this.modeLabel}`);
+          if (this.aiFailed) {
+            this.aiFailed = false;
+            this.useAI = true;
+            this.ensureAIHands();
+            showToast('🔄 Mencoba memuat ulang AI Ujung Jari...');
+            return;
+          }
+          this.useAI = !this.useAI;
+          if (this.useAI && !this.aiReady) {
+            this.ensureAIHands();
+          }
+          this.updateDockBadge();
+          showToast(this.useAI ? '👆 Mode: AI Ujung Jari Telunjuk' : '🌊 Mode: Sensor Gerak Offline');
         },
 
         toggleDwellSpeed() {
@@ -5430,123 +5932,268 @@
           document.getElementById('btn-motion-speed').textContent = `⏳ ${(this.dwellDurationMs / 1000).toFixed(1)}s`;
         },
 
-        clearHover() {
-          if (this.dwellTarget) {
-            this.dwellTarget.classList.remove('motion-hover');
-            this.dwellTarget = null;
+        clearHover(cur) {
+          if (cur.dwellTarget) {
+            cur.dwellTarget.classList.remove(cur.hoverClass);
+            cur.dwellTarget = null;
           }
-          const ring = document.getElementById('motion-ring-progress');
+          const ring = document.getElementById(cur.ringElId);
           if (ring) ring.style.strokeDashoffset = '207.35';
         },
 
-        findInteractiveAt(x, y) {
+        findInteractiveAt(x, y, playerId) {
           const el = document.elementFromPoint(x, y);
           if (!el) return null;
-          return el.closest('button:not(:disabled), .vocab-card, .body-hotspot, .match-item:not(.matched), .quiz-opt-btn:not(:disabled), .listen-pic-btn:not(:disabled), .letter-key:not(:disabled), .duel-opt-btn:not(:disabled), .mp-choice-btn, #home-mascot-click');
+          const target = el.closest('button:not(:disabled), .vocab-card, .body-hotspot, .match-item:not(.matched), .quiz-opt-btn:not(:disabled), .listen-pic-btn:not(:disabled), .letter-key:not(:disabled), .duel-opt-btn:not(:disabled), .mp-choice-btn, #home-mascot-click');
+          if (!target) return null;
+
+          // In 2-Player Duel, prevent P1 from accidentally clicking P2's answer buttons and vice versa
+          if (this.isDualMode()) {
+            if (playerId === 'p1' && target.closest('#mpd-p2-side')) return null;
+            if (playerId === 'p2' && target.closest('#mpd-p1-side')) return null;
+          }
+          return target;
         },
 
-        spawnRipple(x, y) {
+        spawnRipple(x, y, extraClass) {
           const r = document.createElement('div');
-          r.className = 'motion-ripple';
+          r.className = 'motion-ripple ' + (extraClass || '');
           r.style.left = x + 'px';
           r.style.top = y + 'px';
           document.body.appendChild(r);
           setTimeout(() => r.remove(), 460);
         },
 
-        loop() {
-          if (!this.active) return;
-          const video = document.getElementById('motion-video');
+        triggerCursorClick(cur, clickTarget, now) {
+          this.clearHover(cur);
+          cur.cooldownUntil = now + (this.isDualMode() ? 550 : 720);
+          this.spawnRipple(cur.x, cur.y, cur.rippleClass);
+          const curEl = document.getElementById(cur.cursorElId);
+          if (curEl) {
+            curEl.classList.add('clicking');
+            setTimeout(() => curEl.classList.remove('clicking'), 220);
+          }
+          clickTarget.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true }));
+        },
+
+        drawOverlay(dual, mappedHands, offlinePts = null) {
           const overlay = document.getElementById('motion-overlay-canvas');
-          const oCtx = overlay ? overlay.getContext('2d') : null;
+          if (!overlay) return;
+          const ctx = overlay.getContext('2d');
+          const ow = overlay.width;
+          const oh = overlay.height;
+          ctx.clearRect(0, 0, ow, oh);
 
-          if (video && video.readyState >= 2 && this.procCtx) {
-            const w = this.procCanvas.width;
-            const h = this.procCanvas.height;
-            this.procCtx.drawImage(video, 0, 0, w, h);
-            const curr = this.procCtx.getImageData(0, 0, w, h).data;
+          // Draw split divider line during 2-Player Duel so students see their Left/Right zones
+          if (dual) {
+            ctx.save();
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.85)';
+            ctx.lineWidth = 2;
+            ctx.setLineDash([5, 4]);
+            ctx.beginPath();
+            ctx.moveTo(ow / 2, 0);
+            ctx.lineTo(ow / 2, oh);
+            ctx.stroke();
+            ctx.setLineDash([]);
+            ctx.font = 'bold 11px Nunito, sans-serif';
+            ctx.fillStyle = '#6EA9FF';
+            ctx.fillText('🔵 P1', 8, 16);
+            ctx.fillStyle = '#FF8590';
+            ctx.fillText('P2 🔴', ow - 40, 16);
+            ctx.restore();
+          }
 
-            if (this.prevFrame) {
-              const thresh = this.modeLabel === 'Sensitif' ? 24 : 34;
-              let sumX = 0, sumY = 0, count = 0;
+          if (mappedHands && mappedHands.length > 0) {
+            const links = [[0,5],[5,6],[6,7],[7,8],[0,9],[9,10],[10,11],[11,12],[0,1],[1,2],[2,3],[3,4]];
+            mappedHands.forEach((h, i) => {
+              const isP2 = dual && (mappedHands.length === 1 ? h.rawX >= 0.5 : h.rawX >= (mappedHands[0].rawX + mappedHands[mappedHands.length - 1].rawX) / 2 && i === mappedHands.length - 1);
+              const color = isP2 ? '#FF5E6C' : '#3B8BFF';
 
+              // Mini hand skeleton
+              ctx.strokeStyle = 'rgba(255,255,255,0.75)';
+              ctx.lineWidth = 1.6;
+              links.forEach(([a, b]) => {
+                ctx.beginPath();
+                ctx.moveTo((1 - h.lm[a].x) * ow, h.lm[a].y * oh);
+                ctx.lineTo((1 - h.lm[b].x) * ow, h.lm[b].y * oh);
+                ctx.stroke();
+              });
+
+              // Glowing Index Fingertip (landmark 8)
+              const fx = (1 - h.lm[8].x) * ow;
+              const fy = h.lm[8].y * oh;
+              ctx.beginPath();
+              ctx.arc(fx, fy, 7, 0, Math.PI * 2);
+              ctx.fillStyle = color;
+              ctx.fill();
+              ctx.strokeStyle = '#FFFFFF';
+              ctx.lineWidth = 2;
+              ctx.stroke();
+            });
+          } else if (offlinePts) {
+            offlinePts.forEach(pt => {
+              ctx.beginPath();
+              ctx.arc(pt.nx * ow, pt.ny * oh, 9, 0, Math.PI * 2);
+              ctx.fillStyle = pt.color;
+              ctx.fill();
+              ctx.strokeStyle = '#FFFFFF';
+              ctx.lineWidth = 2;
+              ctx.stroke();
+            });
+          }
+        },
+
+        processOfflineMotion(video, dual) {
+          if (!this.procCtx || video.readyState < 2) return;
+          const w = this.procCanvas.width;
+          const h = this.procCanvas.height;
+          this.procCtx.drawImage(video, 0, 0, w, h);
+          const curr = this.procCtx.getImageData(0, 0, w, h).data;
+
+          const offlinePts = [];
+          if (this.prevFrame) {
+            const thresh = 30 * 3;
+            const now = performance.now();
+
+            if (!dual) {
+              let sx = 0, sy = 0, cnt = 0;
               for (let y = 0; y < h; y++) {
                 for (let x = 0; x < w; x++) {
                   const i = (y * w + x) * 4;
                   const diff = Math.abs(curr[i] - this.prevFrame[i])
                     + Math.abs(curr[i + 1] - this.prevFrame[i + 1])
                     + Math.abs(curr[i + 2] - this.prevFrame[i + 2]);
-                  if (diff > thresh * 3) {
-                    // Mirror X so moving hand right moves cursor right
-                    sumX += (w - 1 - x);
-                    sumY += y;
-                    count++;
+                  if (diff > thresh) {
+                    sx += (w - 1 - x);
+                    sy += y;
+                    cnt++;
                   }
                 }
               }
-
-              if (oCtx) {
-                oCtx.clearRect(0, 0, overlay.width, overlay.height);
+              if (cnt > 12) {
+                const nx = (sx / cnt) / w;
+                const ny = (sy / cnt) / h;
+                this.cursors.p1.tx = Math.max(20, Math.min(window.innerWidth - 20, nx * window.innerWidth));
+                this.cursors.p1.ty = Math.max(20, Math.min(window.innerHeight - 20, ny * window.innerHeight));
+                this.cursors.p1.lastSeen = now;
+                offlinePts.push({ nx, ny, color: 'rgba(59,139,255,0.85)' });
               }
-
-              if (count > 12) {
-                const normX = (sumX / count) / w;
-                const normY = (sumY / count) / h;
-                this.targetX = Math.max(20, Math.min(window.innerWidth - 20, normX * window.innerWidth));
-                this.targetY = Math.max(20, Math.min(window.innerHeight - 20, normY * window.innerHeight));
-
-                if (oCtx) {
-                  oCtx.beginPath();
-                  oCtx.arc(normX * overlay.width, normY * overlay.height, 10, 0, Math.PI * 2);
-                  oCtx.fillStyle = 'rgba(46, 213, 115, 0.75)';
-                  oCtx.fill();
-                  oCtx.strokeStyle = '#FFFFFF';
-                  oCtx.lineWidth = 2;
-                  oCtx.stroke();
+            } else {
+              // Dual-zone offline motion: Left half (mx < w/2) -> P1, Right half (mx >= w/2) -> P2
+              let sx1 = 0, sy1 = 0, cnt1 = 0;
+              let sx2 = 0, sy2 = 0, cnt2 = 0;
+              for (let y = 0; y < h; y++) {
+                for (let x = 0; x < w; x++) {
+                  const i = (y * w + x) * 4;
+                  const diff = Math.abs(curr[i] - this.prevFrame[i])
+                    + Math.abs(curr[i + 1] - this.prevFrame[i + 1])
+                    + Math.abs(curr[i + 2] - this.prevFrame[i + 2]);
+                  if (diff > thresh) {
+                    const mx = w - 1 - x;
+                    if (mx < w / 2) { sx1 += mx; sy1 += y; cnt1++; }
+                    else { sx2 += mx; sy2 += y; cnt2++; }
+                  }
                 }
               }
+              if (cnt1 > 8) {
+                const nx1 = (sx1 / cnt1) / w;
+                const ny1 = (sy1 / cnt1) / h;
+                this.cursors.p1.tx = Math.max(16, Math.min(window.innerWidth * 0.49, nx1 * window.innerWidth));
+                this.cursors.p1.ty = Math.max(20, Math.min(window.innerHeight - 20, ny1 * window.innerHeight));
+                this.cursors.p1.lastSeen = now;
+                offlinePts.push({ nx: nx1, ny: ny1, color: 'rgba(59,139,255,0.9)' });
+              }
+              if (cnt2 > 8) {
+                const nx2 = (sx2 / cnt2) / w;
+                const ny2 = (sy2 / cnt2) / h;
+                this.cursors.p2.tx = Math.max(window.innerWidth * 0.51, Math.min(window.innerWidth - 16, nx2 * window.innerWidth));
+                this.cursors.p2.ty = Math.max(20, Math.min(window.innerHeight - 20, ny2 * window.innerHeight));
+                this.cursors.p2.lastSeen = now;
+                offlinePts.push({ nx: nx2, ny: ny2, color: 'rgba(255,94,108,0.9)' });
+              }
             }
-            this.prevFrame = new Uint8ClampedArray(curr);
+          }
+          this.prevFrame = new Uint8ClampedArray(curr);
+          this.drawOverlay(dual, null, offlinePts);
+        },
+
+        updateCursorVisualAndDwell(cur, isActiveCursor, showTag, now) {
+          const curEl = document.getElementById(cur.cursorElId);
+          const emojiEl = document.getElementById(cur.emojiElId);
+          const ring = document.getElementById(cur.ringElId);
+          if (!curEl) return;
+
+          if (!isActiveCursor) {
+            curEl.classList.remove('active', 'show-tag');
+            this.clearHover(cur);
+            return;
           }
 
-          // Smooth cursor interpolation
-          this.cursorX += (this.targetX - this.cursorX) * 0.22;
-          this.cursorY += (this.targetY - this.cursorY) * 0.22;
+          curEl.classList.add('active');
+          curEl.classList.toggle('show-tag', showTag);
 
-          const curEl = document.getElementById('motion-cursor');
-          if (curEl) {
-            curEl.style.transform = `translate3d(${this.cursorX}px, ${this.cursorY}px, 0)`;
+          // Fast responsive interpolation for fingertip tracking
+          const lerp = (this.useAI && this.aiReady) ? 0.36 : 0.24;
+          cur.x += (cur.tx - cur.x) * lerp;
+          cur.y += (cur.ty - cur.y) * lerp;
+          curEl.style.transform = `translate3d(${cur.x}px, ${cur.y}px, 0)`;
+
+          if (emojiEl) {
+            if (this.useAI && this.aiReady) {
+              emojiEl.textContent = cur.pinching ? '👌' : '👆';
+            } else {
+              emojiEl.textContent = '🖐️';
+            }
           }
 
           // Dwell-to-click detection
-          const now = performance.now();
-          const hit = this.findInteractiveAt(this.cursorX, this.cursorY);
-          const ring = document.getElementById('motion-ring-progress');
-
-          if (hit && now > this.cooldownUntil) {
-            if (hit !== this.dwellTarget) {
-              this.clearHover();
-              this.dwellTarget = hit;
-              this.dwellTarget.classList.add('motion-hover');
-              this.dwellStart = now;
+          const hit = this.findInteractiveAt(cur.x, cur.y, cur.id);
+          if (hit && now > cur.cooldownUntil) {
+            if (hit !== cur.dwellTarget) {
+              this.clearHover(cur);
+              cur.dwellTarget = hit;
+              cur.dwellTarget.classList.add(cur.hoverClass);
+              cur.dwellStart = now;
             } else {
-              const progress = Math.min(1, (now - this.dwellStart) / this.dwellDurationMs);
+              const progress = Math.min(1, (now - cur.dwellStart) / this.dwellDurationMs);
               if (ring) ring.style.strokeDashoffset = String(207.35 * (1 - progress));
               if (progress >= 1) {
-                const clickTarget = this.dwellTarget;
-                this.clearHover();
-                this.cooldownUntil = now + 750;
-                this.spawnRipple(this.cursorX, this.cursorY);
-                if (curEl) {
-                  curEl.classList.add('clicking');
-                  setTimeout(() => curEl.classList.remove('clicking'), 220);
-                }
-                clickTarget.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true }));
+                this.triggerCursorClick(cur, cur.dwellTarget, now);
               }
             }
           } else {
-            this.clearHover();
+            this.clearHover(cur);
           }
+        },
+
+        loop() {
+          if (!this.active) return;
+          const video = document.getElementById('motion-video');
+          const dual = this.isDualMode();
+          const now = performance.now();
+
+          // Keep badge text synced when switching between Solo and 2P Duel
+          if (this._lastDualState !== dual) {
+            this._lastDualState = dual;
+            this.updateDockBadge();
+          }
+
+          if (this.useAI && this.aiReady && this.aiHands && video && video.readyState >= 2) {
+            if (!this.aiBusy) {
+              this.aiBusy = true;
+              this.aiHands.send({ image: video }).catch(() => {
+                this.aiBusy = false;
+                this.aiFailed = true;
+                this.useAI = false;
+                this.updateDockBadge();
+              });
+            }
+          } else if (video) {
+            this.processOfflineMotion(video, dual);
+          }
+
+          this.updateCursorVisualAndDwell(this.cursors.p1, true, dual, now);
+          this.updateCursorVisualAndDwell(this.cursors.p2, dual, dual, now);
 
           this.rafId = requestAnimationFrame(() => this.loop());
         }
@@ -5561,10 +6208,10 @@
               100% Offline, Classroom Projector & Motion Control Compatible!
          ----------------------------------------------------------------------- */
       const TEAM_PRESETS = [
-        { name: 'Tim Singa',       emoji: '🦁', color: '#FF5E6C', bg: '#FFF0F1' },
-        { name: 'Tim Lumba-lumba', emoji: '🐬', color: '#3B8BFF', bg: '#EDF6FF' },
-        { name: 'Tim Katak',       emoji: '🐸', color: '#2ED573', bg: '#EAFFF2' },
-        { name: 'Tim Lebah',       emoji: '🐝', color: '#FF9F43', bg: '#FFF5E6' }
+        { name: 'Tim Singa',       emoji: '🦁', color: '#E0354B', bg: '#FFF0F1' },
+        { name: 'Tim Lumba-lumba', emoji: '🐬', color: '#226CEB', bg: '#EDF6FF' },
+        { name: 'Tim Katak',       emoji: '🐸', color: '#18A354', bg: '#EAFFF2' },
+        { name: 'Tim Lebah',       emoji: '🐝', color: '#D97706', bg: '#FFF5E6' }
       ];
 
       let lastMpModePlayed = 'team'; // 'team' | 'duel'
@@ -6281,6 +6928,7 @@
         document.getElementById('mpt-btn-next').addEventListener('click', () => TeamBattle.next());
 
         document.getElementById('mpd-btn-exit').addEventListener('click', () => { AudioEngine.playClick(); DuelBattle.clearTimers(); showScreen('multiplayer'); });
+        document.getElementById('mpd-btn-cam').addEventListener('click', () => { AudioEngine.playClick(); MotionController.toggle(); });
         document.getElementById('mpd-btn-speak').addEventListener('click', () => {
           const cur = DuelBattle.questions[DuelBattle.qIndex];
           if (cur) AudioEngine.speak(cur.item.en, 0.85);
